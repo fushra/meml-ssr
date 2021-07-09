@@ -25,6 +25,8 @@ export default async function load(
   try {
     const path = join(dirname(getCallerFile()), unresolvedPath)
 
+    MemlCore.shouldLink = false
+
     const core = new MemlCore()
 
     const parsed = core.tokenizeAndParse(
