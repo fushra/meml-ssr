@@ -1,0 +1,33 @@
+{
+  "name": "meml-ssr",
+  "version": "1.0.0",
+  "description": "Server side, on demand rendering for MEML components",
+  "main": "dist/index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "tsc",
+    "dev": "ts-node-dev --rs --respawn example/example.ts"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/fushra/meml-ssr.git"
+  },
+  "author": "TrickyPR",
+  "license": "GPL-3.0-or-later",
+  "bugs": {
+    "url": "https://github.com/fushra/meml-ssr/issues"
+  },
+  "homepage": "https://github.com/fushra/meml-ssr#readme",
+  "devDependencies": {
+    "@types/node": "^16.0.1",
+    "fastify": "^3.18.1",
+    "nodemon": "^2.0.9",
+    "ts-node": "^10.0.0",
+    "ts-node-dev": "^1.1.8",
+    "typescript": "^4.3.5"
+  },
+  "dependencies": {
+    "caller-callsite": "^4.1.0",
+    "meml": "^1.0.0-b.13"
+  }
+}

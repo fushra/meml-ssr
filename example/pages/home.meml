@@ -1,0 +1,21 @@
+(component home (name)
+    (
+        (head
+            (meta charset="UTF-8")
+            (meta name="viewport" content="width=device-width, initial-scale=1.0")
+
+            (title "Home")
+        )
+        (body
+            (if (name)
+                (h1 "Hello, " name)
+            else
+                (h1 "Hello")
+            )
+
+            (p "Welcome to a test website. Try adding ?name=[yourName] to the title bar")
+        )
+    )
+)
+
+(export (home))
