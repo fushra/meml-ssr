@@ -14,6 +14,14 @@ Dynamically render MEML components with data provided by a server. **This is a p
 - [ ] Features
   - [ ] Import linking
 
+## Current performance
+
+_Tested on an Intel i5-6500 with 32GB of memory_
+
+| Commit    | Requests per second | Average time per request | 99% worst time | Bottle neck                    |
+| --------- | ------------------- | ------------------------ | -------------- | ------------------------------ |
+| `f699229` | `22520`             | `0.0022` sec             | `0.0047` sec   | Benchmarker network connection |
+
 ## Usage
 
 Use this repo as a dependency.
