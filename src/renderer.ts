@@ -21,8 +21,8 @@ export class Renderer extends ComponentDefinition {
 
     // Assign props to this component
     if (args.length === 1 && typeof args[0] === 'object' && args[0] !== null) {
-      for (const item in args) {
-        this.generator.environment.define(item, args[item])
+      for (const item in args[0]) {
+        this.generator.environment.define(item, args[0][item])
       }
     } else {
       this.propsList().forEach((prop, i) =>
