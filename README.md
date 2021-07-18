@@ -17,7 +17,7 @@ Dynamically render MEML components with data provided by a server. **This is a p
 - [ ] Features
   - [ ] Import linking
 - [ ] Safety
-  - [ ] Testing
+  - [x] Testing
 
 ## Current performance
 
