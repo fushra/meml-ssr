@@ -13,6 +13,8 @@ Dynamically render MEML components with data provided by a server. **This is a p
   - [ ] Partial pre-execution
 - [ ] Features
   - [ ] Import linking
+- [ ] Safety
+  - [ ] Testing
 
 ## Current performance
 
