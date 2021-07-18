@@ -1,0 +1,5 @@
+(component local ()
+    "Local component"
+)
+
+(export (local))

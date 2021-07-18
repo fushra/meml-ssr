@@ -11,11 +11,10 @@ export function getCallerFile() {
     }
 
     // Remove this function from the
-    let _ = (err.stack as any).shift()
+    currentfile = (err.stack as any).shift()
 
     // Grab the file of the caller
-    _ = (err.stack as any).shift()
-    callerfile = (err.stack as any).shift().getFileName()
+    let _ = (err.stack as any).shift()
 
     while (err.stack.length) {
       callerfile = (err.stack as any).shift().getFileName()

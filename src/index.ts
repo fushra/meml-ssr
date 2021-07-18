@@ -5,7 +5,7 @@ import { ComponentDefinition } from 'meml/dist/targets/shared/ComponentDefinitio
 import { readFile } from 'fs/promises'
 import { join, dirname } from 'path'
 
-import { Renderer } from './renderer'
+import { Renderer as RendererLocal } from './renderer'
 import { getCallerFile } from './utils'
 
 export type LoadOptions = {
@@ -16,6 +16,8 @@ export const DefaultLoadConfig: LoadOptions = {
   usesPages: true,
 }
 
+export const Renderer = RendererLocal
+
 export default async function load(
   unresolvedPath: string,
   opts: Partial<LoadOptions> = {}
@@ -23,9 +25,21 @@ export default async function load(
   const options = { ...opts, ...DefaultLoadConfig }
 
   try {
-    const path = join(dirname(getCallerFile()), unresolvedPath)
+    // We want both relative and absolute path resolution to work for the user to
+    // reduce the friction of their usage of the library. Therefore, we must check
+    // if we want it to be relative or not. If the path is prepended with a '/' we
+    // will assume it is absolute, otherwise it is assumed to be relative
+    let path
+
+    if (unresolvedPath[0] === '/') {
+      path = unresolvedPath
+    } else {
+      path = join(dirname(getCallerFile()), unresolvedPath)
+    }
 
     MemlCore.shouldLink = false
+    MemlCore.resetErrors()
+    MemlCore.isProduction = true
 
     const core = new MemlCore()
 
