@@ -4,6 +4,9 @@
 
 Dynamically render MEML components with data provided by a server. **This is a prototype**
 
+![Codecov](https://img.shields.io/codecov/c/github/fushra/meml-ssr?style=for-the-badge)
+[![Discord](https://img.shields.io/discord/841238828042944562?style=for-the-badge)](https://discord.gg/UPQW9juP5Z)
+
 </div>
 
 ## Todo
